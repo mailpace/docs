@@ -41,7 +41,7 @@ class AppServiceProvider extends ServiceProvider
 }
 ```
 
-### 3. Add the Mailer to the available transports 
+### Add the Mailer to the available transports 
 
 ```php title=config/mail.php
 'mailpace' => [
@@ -49,7 +49,7 @@ class AppServiceProvider extends ServiceProvider
 ],
 ```
 
-### 4. Add your API key
+### Add your API key
 
 ```php title=config/services.php
 'mailpace' => [
