@@ -29,6 +29,7 @@ module.exports = {
       },
       {
         "PHP": [
+          'integrations/php/laravel',
           'integrations/php/swiftmailer',
           'integrations/php/symfony',
         ]

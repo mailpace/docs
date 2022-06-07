@@ -61,7 +61,7 @@ module.exports = {
       copyright: `Copyright © ${new Date().getFullYear()} MailPace.com`,
     },
     prism: {
-      additionalLanguages: ['ruby'],
+      additionalLanguages: ['ruby', 'php'],
     },
     algolia: {
       appId: 'DDZLB5QA5I',
