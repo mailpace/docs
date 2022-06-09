@@ -6,9 +6,7 @@ sidebar_label: Inbound Emails
 
 ## Overview
 
-Our inbound email works by catching all emails addressed to the `inbound` subdomain of your domain. For example if your domain is `test.com`, any emails sent to `*@inbound.test.com` will be handled. We then POST all emails onto a webhook address of your choice, defined on the `inbound_emails` page in our application.
-
-All plans come with unlimited domains, so if the `inbound` subdomain is unavailable on your domain, you can always create another subdomain and use that (e.g. `emails.inbound.test.com`).
+Our inbound email works by catching all emails addressed to a subdomain of your domain. For example if your domain is `test.com`, and you choose the subdomain `inbound` any emails sent to `*@inbound.test.com` will be handled. We POST all emails onto a webhook address of your choice, defined on the `inbound_emails` page in our application.
 
 We will attempt to send to your endpoint five times with an increasing gap in between each send, after which we will declare the email as failed and will not try again.
 
@@ -18,7 +16,7 @@ Your domain must have passed DKIM verification and your organization must have a
 
 ## Setup
 
-To setup Inbound Emails you need to add a `CNAME` DNS record that points from `inbound` on your domain to `inbound.mailpace.com`. This will ensure that any emails sent to `inbound.<your-domain>` are sent to our servers. The specific instructions and example records are available on the **Inbound Emails** page of your Domain.
+To setup Inbound Emails you need to add a `CNAME` DNS record that points from your chosen inbound subdomain on your domain to `inbound.mailpace.com`. This will ensure that any emails sent to `<inbound-subdomain>.<your-domain>` are sent to our servers. The specific instructions and example records are available on the **Inbound Emails** page of your Domain.
 
 After you have setup your DNS records, you just need to add an Endpoint URL, which can be any `https` address. For testing, you can use a tunnel to your local machine like [ngrok](https://ngrok.com/) or a service like https://httpstat.us/.
 
@@ -49,7 +47,6 @@ Emails are sent as HTTP POST requests with a JSON body containing the following 
 | replyTo | Optional | string | `bounces+abcd@test.com` |
 | html | Optional | string |  `<h1>Email Contents Here</h1>` |
 | text | Optional | string |  `Text Email Contents` |
-
 | attachments | Optional | Array of Attachments | See [Attachments](#attachments) |
 
 *Properties that are marked as Optional may not appear as a parameter in the body*
