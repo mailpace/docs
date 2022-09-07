@@ -43,7 +43,7 @@ The `/send` endpoint is the main API endpoint for sending messages through MailP
 | subject | string | `Email Subject` |  |  *Optional* |
 | replyto | string | `example@domain.com` |  |  *Optional* |
 | list_unsubscribe | string | `<mailto:list@host.com?subject=unsubscribe>`<br /> <br />`<http://www.host.com/list.cgi?cmd=unsub&lst=list>, <mailto:list-request@host.com?subject=unsubscribe>`|  |  *Optional* |
-| attachments | array of attachment objects (see below) | [ name: "attachment.jpg", "cid": "cid:attachment.jpg", "content": "abcdefghijek", content_type": "image/jpeg" ] |  |  *Optional* File types are allow-listed (see below) |
+| attachments | array of attachment objects (see below) | [ name: "attachment.jpg", "cid": '< attachment.cid>', "content": "abcdefghijek", content_type": "image/jpeg" ] |  |  *Optional* File types are allow-listed (see below) |
 | tags | array of tags or a single tag as a string | [ "password reset", "welcome" ] or "welcome" | |  *Optional* |
 
 
@@ -57,7 +57,7 @@ To send attachments over the API use the following format of an array of objects
         name: "This is what will be displayed to the end user. Example: myimage.jpg",
         content: "The attachment, encoded as a base64 encoded string",
         content_type: "MIME type. Example: image/jpeg"
-        cid: "Optional, used for embedding inline images. Example: myimage",
+        cid: "Optional, used for embedding inline images. Example: '<myimage.cid>'. Setting a cid value will set the attachment's Content-Disposition type to 'inline'",
     },
     { ... }
 ]
