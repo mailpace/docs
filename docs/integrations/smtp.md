@@ -20,8 +20,8 @@ Find your application's SMTP configuration settings and use the following option
 | Option      | Setting    | Details |
 | :------------- | :---------- |  :------ |
 | SMTP Server | ```smtp.mailpace.com``` | Sometimes called Host Address or similar |
-| SMTP Port | `25`, `587`, or `2525` | It doesn't matter which one you pick |
-| Encryption | `TLS` or `STARTTLS` | No encryption or other options will work but it is not recommended. If this setting is unavailable, that's fine |
+| SMTP Port | `25`, `587`, `2525` or `465` | Pick `25`, `587` or `2525` if you wish to connect with `STARTTLS`, or `465` if you want to connect with `TLS` only |
+| Encryption | `STARTTLS` or `TLS` | `STARTTLS` will open an insecure connection and upgrade to secure. If you wish to use `TLS` only, ensure you use port `465` above |
 | Authentication | `PLAIN` or `LOGIN` | You may only have an option to enable this without any choices, in that case it will work fine |
 | Username | `Your API token` | API tokens can be found under the "API Tokens" menu of a each Domain, there is one unique API token for every domain | 
 | Password | `Your API token` | API tokens can be found under the "API Tokens" menu of a each Domain, there is one unique API token for every domain | 
