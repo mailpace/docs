@@ -48,6 +48,7 @@ All webhook event bodies have two properties:
 `replyto` | String | Reply to address | Yes |
 `message_id` | String | Message ID set by MailPace, in the format `<message-id>@<mailer.mailpace.com>` | No |
 `list_unsubscribe` | String | List-Unsubscribe header | Yes |
+`tags` | Array[String] | The email tags as an array of strings | Yes |
 
 *Properties that are marked as nullable are optional and will appear as `null` in the body if undefined*
 
@@ -72,7 +73,8 @@ All webhook event bodies have two properties:
         "subject": "string",
         "replyto": "string",
         "message_id": "string",
-        "list_unsubscribe": "string"
+        "list_unsubscribe": "string",
+        "tags": ["string", "string"]
     }
 }
 ```
