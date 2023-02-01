@@ -12,6 +12,12 @@ To set this up, open the Webhooks section of your Domain. Here you can add or re
 
 Webhooks are sent as JSON POST requests, with a Content-Type of `application/json`, and are signed using an Ed25519 signature available in the `X-MailPace-Signature` header key.
 
+## Disabling Webhooks
+
+Webhooks can be disabled using the toggle buttons next to each webhook. 
+
+If a webhook endpoint fails with a connection error or general HTTP error it will be disabled automatically and must be re-enabled using the toggle. For temporary errors (such as TLS errors where a certificate was not renewed or Timeout errors) the webhook will be retried up to ten times at varying intervals, until it is eventually disabled.
+
 ## Events
 
 All webhook event bodies have two properties:
