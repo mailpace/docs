@@ -26,4 +26,4 @@ bounces+<message-id>@mailer.<domain>
 
 Where `message-id` is set by our email servers and `domain` is your full domain name. With this your `From` address and `Reply-To` addresses will have the same domain, which is required for DMARC validation to pass and is often used as an additional check by spam filters.
 
-Additionally, Because you will also add a CNAME record to `mailer.mailpace.com` as part of this process, any bounce reports will also be redirected to our servers for handling.
+Additionally, Because you will also add a CNAME record to `mailer.ohmysmtp.com` as part of this process, any bounce reports will also be redirected to our servers for handling.
