@@ -33,7 +33,7 @@ class AppServiceProvider extends ServiceProvider
                 new Dsn(
                     'ohmysmtp+api',
                     'default',
-                    config('services.ohmysmtp.key')
+                    config('services.mailpace.key')
                 )
             );
         });
