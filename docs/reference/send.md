@@ -28,7 +28,7 @@ The `/send` endpoint is the main API endpoint for sending messages through MailP
 | :------------- | :---------- | :----------- |
 |  Accept | `application/json` | **Required** |
 |  Content-Type | `application/json` | **Required** |
-|  MailPace-Server-Token | See [authentication](authentication) for details | **Required**  |
+|  MailPace-Server-Token | See [authentication](/reference/authentication) for details | **Required**  |
 
 ### Body Parameters
 
