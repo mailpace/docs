@@ -4,6 +4,6 @@ title: Go Package
 sidebar_label: Go
 ---
 
-Our Go package is community provided and available here:
+Our Go package is available here:
 
-https://github.com/seailly/gomysmtp/
+https://github.com/mailpace/gomailpace/
