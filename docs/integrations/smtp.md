@@ -28,6 +28,10 @@ Find your application's SMTP configuration settings and use the following option
 
 That's all you need. You can continue sending emails through your application's standard email interface and emails sent over SMTP will appear on your dashboard.
 
+:::info
+We are not an SMTP relay. Unsupported headers, or metadata (like Message-id) will not be kept when sending emails via SMTP. You must also set `From` and `To` headers in the message body.
+:::
+
 ## Tags
 
 MailPace supports tagging emails for later categorization and analysis in the UI. To do this over SMTP you need to set a Header on the email, using the email software you're using to send the message. The header name should be `X-MailPace-Tags` and the content either a single string or comma separated list of strings, as follows:
