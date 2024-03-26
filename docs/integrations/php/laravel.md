@@ -12,28 +12,28 @@ Laravel uses Symfony Mailer under the hood, we maintain a [Symfony Mailer Bridge
 
 ### Install the bridge & http client:
 
-`composer require symfony/oh-my-smtp-mailer symfony/http-client`
+`composer require symfony/mail-pace-mailer symfony/http-client`
 
 
-### Extend Mail with the `oh-my-smtp` bridge
+### Extend Mail with the `mail-pace` bridge
 
 In a `boot()` function
 
 ```php title=app/Providers/AppServiceProvider.php
 use Illuminate\Support\Facades\Mail;
-use Symfony\Component\Mailer\Bridge\OhMySmtp\Transport\OhMySmtpTransportFactory;
+use Symfony\Component\Mailer\Bridge\MailPace\Transport\MailPaceTransportFactory;
 use Symfony\Component\Mailer\Transport\Dsn;
 
 class AppServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-        Mail::extend('oh-my-smtp', function () {
-            return (new OhMySmtpTransportFactory())->create(
+        Mail::extend('mail-pace', function () {
+            return (new MailPaceTransportFactory())->create(
                 new Dsn(
-                    'ohmysmtp+api',
+                    'mailpace+api',
                     'default',
-                    config('services.ohmysmtp.key')
+                    config('services.mailpace.key')
                 )
             );
         });
@@ -45,7 +45,7 @@ class AppServiceProvider extends ServiceProvider
 
 ```php title=config/mail.php
 'mailpace' => [
-    'transport' => 'oh-my-smtp',
+    'transport' => 'mail-pace',
 ],
 ```
 
@@ -60,8 +60,8 @@ class AppServiceProvider extends ServiceProvider
 
 ## Example
 
-Here's an example Laravel 9 repository with a commit that demonstrates the changes required to configure MailPace with Laravel:
+Here's an example Laravel 9 repository demonstrates a MailPace configuration with Laravel:
 
-https://github.com/mailpace/laravel-example/commit/93053f8d87fef62bb38323894a12a9e95b3abf91
+https://github.com/mailpace/laravel-example/
 
 In this example we create a `/send` route that triggers an email. To test this just update the `from` address and `key` with your MailPace API token and open the `/send` path in your browser
