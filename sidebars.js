@@ -48,6 +48,6 @@ module.exports = {
     type: "category",
     label: "Guides",
     collapsed: false,
-    items: ['guide/lifecycle', 'guide/blocklist', 'guide/verification', 'guide/webhooks', 'guide/inbound', 'guide/moving_from_ohmysmtp']
+    items: ['guide/lifecycle', 'guide/idempotency', 'guide/blocklist', 'guide/verification', 'guide/webhooks', 'guide/inbound', 'guide/moving_from_ohmysmtp']
   }]
 };
