@@ -6,13 +6,13 @@ sidebar_label: Idempotent Requests
 
 Our [/send](../reference/send) endpoint supports [idempotency](https://en.wikipedia.org/wiki/Idempotence) for safely retrying requests without accidentally sending the same email twice. This is useful to guarantee that an email is not sent to the same recipient multiple times, e.g. through a network error, or a bug in your application logic.
 
-To do this, when sending an email, you generate and add a unique `Idempotency-Key` string to the headers of the send request. If an error occurs, you can safely repeat the request without risk of sending the same email twice.
+To do this, when sending an email, you generate and add a unique `Idempotency-Key` string to the headers of the send request. You can then safely repeat the request without risk of sending the same email twice.
 
 Typically you would use a UUID to do this (we suggest using [V4 UUIDs](https://datatracker.ietf.org/doc/html/rfc9562#section-5.4)), although you can use any unique string of your choice, with enough entropy to avoid a collision.
 
 ## Implementation Details
 
-MailPace stores the response to all successful requests, and returns that response on all subsequent requests with the same Idempotency Key and Server Token. Subsequent requests with the same key and token return the same result.
+MailPace stores the response to all successful requests, and returns that response on all subsequent requests with the same Idempotency Key and Server Token, regardless of request body.
 
 There are some additional considerations:
 
@@ -49,7 +49,7 @@ curl "https://app.mailpace.com/api/v1/send" \
     -H "Accept: application/json" \
     -H "Content-Type: application/json" \
     -H "MailPace-Server-Token: API_TOKEN_GOES_HERE" \
-    -H "Idempotent-Key: UNIQUE_STRING_EG_UUIDV4_GOES_HERE" \
+    -H "Idempotency-Key: UNIQUE_STRING_EG_UUIDV4_GOES_HERE" \
     -d '{
       "from": "example@domain.com",
       "to": "person@somewhere.com",
@@ -67,7 +67,7 @@ var headers = {
     'Accept': 'application/json',
     'Content-Type': 'application/json',
     'MailPace-Server-Token': 'API_TOKEN_GOES_HERE',
-    'Idempotent-Key': 'UNIQUE_STRING_EG_UUIDV4_GOES_HERE'
+    'Idempotency-Key': 'UNIQUE_STRING_EG_UUIDV4_GOES_HERE'
 };
 
 var dataString = `{
@@ -107,7 +107,7 @@ request = Net::HTTP::Post.new(uri)
 request.content_type = 'application/json'
 request['Accept'] = 'application/json'
 request['Ohmysmtp-Server-Token'] = 'API_TOKEN_GOES_HERE'
-request['Idempotent-Key'] = 'UNIQUE_STRING_EG_UUIDV4_GOES_HERE'
+request['Idempotency-Key'] = 'UNIQUE_STRING_EG_UUIDV4_GOES_HERE'
 
 request.body = JSON.dump(
   {
@@ -138,7 +138,7 @@ headers = {
     "Accept": "application/json",
     "Content-Type": "application/json",
     "MailPace-Server-Token": "API_TOKEN_GOES_HERE",
-    "Idempotent-Key": "UNIQUE_STRING_EG_UUIDV4_GOES_HERE"
+    "Idempotency-Key": "UNIQUE_STRING_EG_UUIDV4_GOES_HERE"
 }
 
 data = {
@@ -191,7 +191,7 @@ if err != nil {
 req.Header.Set("Accept", "application/json")
 req.Header.Set("Content-Type", "application/json")
 req.Header.Set("Ohmysmtp-Server-Token", "API_TOKEN_GOES_HERE")
-req.Header.Set("Idempotent-Key", "UNIQUE_STRING_EG_UUIDV4_GOES_HERE")
+req.Header.Set("Idempotency-Key", "UNIQUE_STRING_EG_UUIDV4_GOES_HERE")
 
 resp, err := http.DefaultClient.Do(req)
 if err != nil {
