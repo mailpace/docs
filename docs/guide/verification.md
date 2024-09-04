@@ -29,5 +29,5 @@ Where `message-id` is set by our email servers and `domain` is your full domain 
 Additionally, Because you will also add a CNAME record to `mailer.ohmysmtp.com` as part of this process, any bounce reports will also be redirected to our servers for handling.
 
 :::tip
-Note that if you're using CloudFlare, make sure your CNAME record is **not** Proxied (the Orange cloud should be off / grey)
+If you're using CloudFlare, make sure your CNAME record is **not** Proxied (the Orange cloud should be off / grey)
 :::
