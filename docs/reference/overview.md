@@ -14,7 +14,7 @@ Send a request using any HTTP library you like, including the right headers and 
 
 We like to keep it simple, and only have one endpoint:
 
-[https://app.mailpace.com/api/v1/send](send)
+[https://app.mailpace.com/api/v1/send](/reference/send)
 
 ## Versioning
 
