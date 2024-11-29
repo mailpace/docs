@@ -48,7 +48,7 @@ All webhook event bodies have two properties:
 `to` | String | To email address, may be a comma separated list if multiple recipients provided | Yes |
 `htmlbody` | String | HTML body in email | Yes |
 `textbody` | String | Text body in email| Yes |
-`cc` | String | Carbon Coop email address, may be a comma separated list if multiple recipients provided | Yes |
+`cc` | String | Carbon Copy email address, may be a comma separated list if multiple recipients provided | Yes |
 `bcc` | String | Blind Carbon Copy email address, may be a comma separated list if multiple recipients provided| Yes |
 `subject` | String | Email subject | Yes |
 `replyto` | String | Reply to address | Yes |
