@@ -68,3 +68,7 @@ Attachments are sent as an array, in the following structure:
 | contentId | The header value from `Content-ID` | Optional | string | `<abc>` |
 | cid | `contentId` without `<` and `>` | Optional | string | `abc` |
 | related | Attachment should not be offered for download as a "standard" Attachment | Optional | boolean | `true` |
+
+## Verification
+
+The webhook triggered by Inbound emails also includes a header called `X-MailPace-Signature`. By validating this signature using your domain's Webhook Verification Key, you can ensure that the inbound email recieved originates from MailPace and has not been tampered with. See [Webhooks](/guide/webhooks#verification) for more details and an example.
