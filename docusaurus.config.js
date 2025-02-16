@@ -17,7 +17,7 @@ module.exports = {
       },
       items: [
         {
-          to: 'https://blog.mailpace.com',
+          to: 'https://mailpace.com/blog',
           label: 'Blog',
           position: 'left',
         },

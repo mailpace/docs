@@ -51,7 +51,7 @@ All other libraries are community maintained and will be updated in due course.
 | :------------- | :------------- | :---------- | 
 | Landing Page | https://ohmysmtp.com | https://mailpace.com |
 | Documentation | https://docs.ohmysmtp.com | https://docs.mailpace.com |
-| Blog | https://blog.ohmysmtp.com | https://blog.mailpace.com |
+| Blog | https://blog.ohmysmtp.com | https://mailpace.com/blog |
 | Status Monitor | https://status.ohmysmtp.com | https://status.mailpace.com |
 | Support Email | support@ohmysmtp.com | support@mailpace.com |
 | Twitter | [@ohmysmtp](https://twitter.com/ohmysmtp) | [@mailpace](https://twitter.com/mailpace) |

@@ -6,7 +6,7 @@ sidebar_label: Verification
 
 ## Basic Verification
 
-In order to send emails with us you must verify ownership of your chosen domain. This will also enable [DKIM signing](https://blog.mailpace.com/blog/whats-a-DKIM-record/) of your emails, which proves that your emails have come from a server with the authority to send emails on your behalf and that they have not been tampered with.
+In order to send emails with us you must verify ownership of your chosen domain. This will also enable [DKIM signing](https://mailpace.com/blog/guides/whats-a-dkim-record) of your emails, which proves that your emails have come from a server with the authority to send emails on your behalf and that they have not been tampered with.
 
 You will be guided through DKIM verification during the onboarding process. If you need to re-verify your domain (for example after changing DNS providers), you can complete the process again by accessing the Verification page under your Domain.
 
