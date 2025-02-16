@@ -45,8 +45,8 @@ The `/send` endpoint is the main API endpoint for sending messages through MailP
 | inreplyto | string | `<message-id@domain.com>` | |  *Optional* |
 | references | string | `<message-id@domain.com> <message-id2@domain.com>` | |  *Optional* |
 | list_unsubscribe | string | `<mailto:list@host.com?subject=unsubscribe>`<br /> <br />`<http://www.host.com/list.cgi?cmd=unsub&lst=list>, <mailto:list-request@host.com?subject=unsubscribe>`|  |  *Optional* |
-| attachments | array of attachment objects (see below) | [{ "name": "attachment.jpg", "cid": '< attachment.cid>', "content": "abcdefghijek", "content_type": "image/jpeg" }] |  |  *Optional* File types are allow-listed (see below) |
-| tags | array of tags or a single tag as a string | [ "password reset", "welcome" ] or "welcome" | |  *Optional* |
+| attachments | array of attachment objects (see below) | `[{ "name": "attachment.jpg", "cid": '< attachment.cid>', "content": "abcdefghijek", "content_type": "image/jpeg" }]` |  |  *Optional* File types are allow-listed (see below) |
+| tags | array of tags or a single tag as a string | `[ "password reset", "welcome" ]` or `"welcome"` | |  *Optional* |
 
 
 #### Attachments
