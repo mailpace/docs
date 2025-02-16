@@ -6,7 +6,6 @@ module.exports = {
   favicon: 'img/favicon.ico',
   organizationName: 'MailPace', // Usually your GitHub org/user name.
   projectName: 'MailPace.com', // Usually your repo name.
-  scripts: [{ src: 'https://plausible.io/js/plausible.js', async: true, defer: true, 'data-domain': 'docs.mailpace.com' }],
   themeConfig: {
     navbar: {
       title: 'MailPace',
