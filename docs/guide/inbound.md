@@ -27,7 +27,7 @@ There are four statuses that an inbound email can be in after it has been receiv
 - Queued: Email received and has been added to the queue for sending to the endpoint
 - Success: The POST request to the endpoint succeeded, with an HTTP status code between 200 and 300
 - Retrying - The POST request to the endpoint failed. We attempt to send 5 times, at vary intervals, after which the email will move to the `Failed` state
-- Failed - The POST request has permanently failed, either through exhausting the number of retries or another permanent failure (e.g. HTTP connection errors or timeouts that are unlikely to succeed in the near future)
+- Failed - The POST request has permanently failed, either through exhausting the number of retries or another permanent failure (e.g. HTTP connection errors or timeouts that are unlikely to succeed in the near future). A bounce report will be sent to the original sender of the email for failed inbound emails
 
 ## Email Payload Reference
 
