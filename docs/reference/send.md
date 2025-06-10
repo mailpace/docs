@@ -69,7 +69,7 @@ That the content field (the attachment itself) should be a base64 encoded string
 
 Only the following attachment extensions are supported, see [here](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types) for their corresponding ContentTypes:
 
-`jpeg`, `jpg`, `png`, `gif`, `txt`, `pdf`, `docx`, `xlsx`, `pptx`, `csv`, `att`, `ics`, `ical`, `html`, `zip`
+`jpeg`, `jpg`, `png`, `gif`, `txt`, `pdf`, `docx`, `xlsx`, `pptx`, `csv`, `att`, `ics`, `ical`, `html`, `zip`, `auf`
 
 Including files with an extension other than the above will return an error. If you need to send an attachment type that is not specified in the list above, contact our Support team.
 
