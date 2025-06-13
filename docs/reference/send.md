@@ -73,4 +73,6 @@ Only the following attachment extensions are supported, see [here](https://devel
 
 Including files with an extension other than the above will return an error. If you need to send an attachment type that is not specified in the list above, contact our Support team.
 
+> File names must not contain more than one full stop (period) `.` in them, including the extension. For example (`image.001.jpeg` is invalid)
+
 For unusual file types or large attachments we **strongly recommend using an external service to host files and send a link to those files in the email**. This will be much faster, and tends to be a far more scalable approach.
