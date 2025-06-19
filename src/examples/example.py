@@ -8,4 +8,4 @@ headers = {
 
 data = '{\n    "from": "SOMEONE@google.com",\n    "to": "SOMEONE@SOMEWHERE.com",\n    "subject": "Hello from MailPace.com",\n    "textbody": "HTML Body is auto-generated"\n  }'
 
-response = requests.post('https://app.mailpace.com/api/v1/send', headers=headers, data=data)
+response = requests.post('https://app.mailpace.com/api/v1/send', headers=headers, json=data)

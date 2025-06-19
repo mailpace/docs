@@ -148,7 +148,7 @@ data = {
     "textbody": "Hello"
 }
 
-response = requests.post('https://app.mailpace.com/api/v1/send', headers=headers, data=data)
+response = requests.post('https://app.mailpace.com/api/v1/send', headers=headers, json=data)
 
   ```
 
