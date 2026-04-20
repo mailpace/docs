@@ -16,6 +16,7 @@ module.exports = {
           'reference/authentication',
           'reference/headers',
           'reference/send',
+          'reference/domains',
           'reference/responses'
         ]
       },

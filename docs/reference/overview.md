@@ -12,9 +12,10 @@ Send a request using any HTTP library you like, including the right headers and 
 
 ## Endpoints
 
-We like to keep it simple, and only have one endpoint:
+MailPace API endpoints:
 
-[https://app.mailpace.com/api/v1/send](/reference/send)
+- Send email: [https://app.mailpace.com/api/v1/send](/reference/send)
+- Domains API: [https://app.mailpace.com/api/v1/domains](/reference/domains)
 
 ## Versioning
 
