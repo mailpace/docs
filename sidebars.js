@@ -7,19 +7,23 @@ module.exports = {
   },
   {
     type: "category",
+    label: "API Reference",
+    collapsed: false,
+    items: [
+      'reference/overview',
+      'reference/organization-quickstart',
+      'reference/authentication',
+      'reference/headers',
+      'reference/send',
+      'reference/domains',
+      'reference/responses'
+    ]
+  },
+  {
+    type: "category",
     label: "Integrations",
     collapsed: false,
     items: [
-      {
-        "HTTP API": [
-          'reference/overview',
-          'reference/authentication',
-          'reference/headers',
-          'reference/send',
-          'reference/domains',
-          'reference/responses'
-        ]
-      },
       'integrations/smtp',
       'integrations/rails',
       {

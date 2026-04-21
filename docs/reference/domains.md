@@ -159,6 +159,98 @@ Example response:
 }
 ```
 
+### List domain API tokens
+
+`GET /api/v1/domains/:domain_id/api_tokens`
+
+Returns all domain API tokens for the domain.
+
+```bash
+curl "https://app.mailpace.com/api/v1/domains/123/api_tokens" \
+  -X GET \
+  -H "Accept: application/json" \
+  -H "Content-Type: application/json" \
+  -H "MailPace-Organization-Token: ORGANIZATION_TOKEN_GOES_HERE"
+```
+
+### Get one domain API token
+
+`GET /api/v1/domains/:domain_id/api_tokens/:id`
+
+Returns one domain API token by ID.
+
+```bash
+curl "https://app.mailpace.com/api/v1/domains/123/api_tokens/456" \
+  -X GET \
+  -H "Accept: application/json" \
+  -H "Content-Type: application/json" \
+  -H "MailPace-Organization-Token: ORGANIZATION_TOKEN_GOES_HERE"
+```
+
+### Create a domain API token
+
+`POST /api/v1/domains/:domain_id/api_tokens`
+
+Creates a new domain API token.
+
+Request body:
+
+| Name | Type | Notes | |
+| :------------- | :---------- | :----------- | :----------- |
+| `api_token.name` | string | Friendly token label | *Optional* |
+
+```bash
+curl "https://app.mailpace.com/api/v1/domains/123/api_tokens" \
+  -X POST \
+  -H "Accept: application/json" \
+  -H "Content-Type: application/json" \
+  -H "MailPace-Organization-Token: ORGANIZATION_TOKEN_GOES_HERE" \
+  -d '{
+    "api_token": {
+      "name": "Production sender key"
+    }
+  }'
+```
+
+On success, returns `201 Created` with the created API token.
+
+### Update a domain API token
+
+`PATCH /api/v1/domains/:domain_id/api_tokens/:id`
+
+Updates token attributes.
+
+```bash
+curl "https://app.mailpace.com/api/v1/domains/123/api_tokens/456" \
+  -X PATCH \
+  -H "Accept: application/json" \
+  -H "Content-Type: application/json" \
+  -H "MailPace-Organization-Token: ORGANIZATION_TOKEN_GOES_HERE" \
+  -d '{
+    "api_token": {
+      "name": "Primary sender key"
+    }
+  }'
+```
+
+On success, returns `200 OK` with the updated API token.
+
+### Revoke a domain API token
+
+`DELETE /api/v1/domains/:domain_id/api_tokens/:id`
+
+Revokes the token.
+
+```bash
+curl "https://app.mailpace.com/api/v1/domains/123/api_tokens/456" \
+  -X DELETE \
+  -H "Accept: application/json" \
+  -H "Content-Type: application/json" \
+  -H "MailPace-Organization-Token: ORGANIZATION_TOKEN_GOES_HERE"
+```
+
+On success, returns `200 OK` with a revoke confirmation message.
+
 ## Errors and status codes
 
 - `200 OK`: Request succeeded
