@@ -53,8 +53,17 @@ A domain response contains:
 
 Returns an array of domains for the authenticated organization.
 
+Optional query parameters:
+
+| Name | Type | Notes | |
+| :------------- | :---------- | :----------- | :----------- |
+| `limit` | integer | Number of results to return. Default `50`, max `200`. | *Optional* |
+| `offset` | integer | Number of results to skip. Default `0`. | *Optional* |
+| `sort` | string | Sort field: `created_at`, `id`, or `name`. Default `created_at`. | *Optional* |
+| `direction` | string | Sort direction: `asc` or `desc`. Default `desc`. | *Optional* |
+
 ```bash
-curl "https://app.mailpace.com/api/v1/domains" \
+curl "https://app.mailpace.com/api/v1/domains?sort=created_at&direction=desc&limit=50&offset=0" \
   -X GET \
   -H "Accept: application/json" \
   -H "Content-Type: application/json" \

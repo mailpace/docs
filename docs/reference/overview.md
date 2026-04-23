@@ -17,8 +17,6 @@ MailPace API endpoints:
 - Send email: [https://app.mailpace.com/api/v1/send](/reference/send)
 - Domains API: [https://app.mailpace.com/api/v1/domains](/reference/domains)
 
-If you want to provision domains and tokens first, follow the [Organization API Quickstart](/reference/organization-quickstart).
-
 ## Versioning
 
 The URL contains the version number after the `api/` string. When backwards-incompatible changes are made to the API, a new version is released and the old version will continue to operate until a published end of life date.

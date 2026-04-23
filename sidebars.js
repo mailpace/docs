@@ -11,7 +11,6 @@ module.exports = {
     collapsed: false,
     items: [
       'reference/overview',
-      'reference/organization-quickstart',
       'reference/authentication',
       'reference/headers',
       'reference/send',
