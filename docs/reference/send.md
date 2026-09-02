@@ -19,7 +19,7 @@ The `/send` endpoint is the main API endpoint for sending messages through MailP
 ### Limitations
 
 - You can send to up 50 email addresses in one go in the `To` address fields
-- The endpoint supports a total email size of 50 MB
+- The endpoint supports a total email size of 30 MB
 - Rate limits exist for high send volumes over short periods of time. If you are experiencing this or believe you will, contact our Support team to discuss 
 
 ### Headers
